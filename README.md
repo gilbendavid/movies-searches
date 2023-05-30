@@ -10,21 +10,21 @@ For the assignment choose your preferred language and test Automation framework(
 
 Assignment Requirements:
 Complete the Implementation of 3 API methods and make sure they worked as expected:
-Search Movies by free text
-Search by Movie Title
-Search by Movie Id
+ - Search Movies by free text
+ - Search by Movie Title
+ - Search by Movie Id
 
 Complete the Implementation of the 3 logical methods:
-getAllMoviesTitles - Get all Movies Titles as string Array (free text string as input)
-getMovieReleasedDate - Get the Movie release date (Movie name/id as input string)
-getHighestRatingMovie - Return the highest rating Movie(by the imdbRating movie field) (Array of movies names as input)
+ - getAllMoviesTitles - Get all Movies Titles as string Array (free text string as input)
+ - getMovieReleasedDate - Get the Movie release date (Movie name/id as input string)
+ - getHighestRatingMovie - Return the highest rating Movie(by the imdbRating movie field) (Array of movies names as input)
 
 Implement the relevant Tests in your opinion for the logical methods with your preferred Testing freamwork:
 getAllMoviesTitles, getMovieReleasedDate, getHighestRatingMovie
 
 While building this assignment please keep in mind the following:
-Clean code and good separation of layers.
-Modular design, for maintenance and new logic support in the future.
-It's okay if you don't finish it all. Write what you can and we'll talk about it afterward.
+ - Clean code and good separation of layers.
+ - Modular design, for maintenance and new logic support in the future.
+ - It's okay if you don't finish it all. Write what you can and we'll talk about it afterward.
 
 Good Luck!!!
