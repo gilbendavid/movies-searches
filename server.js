@@ -7,7 +7,7 @@ const {
   getMovieReleasedDate,
   getHighestRatingMovie,
 } = require("./movies-functions");
-const port = 5555;
+const PORT = process.env.PORT || 5555;
 
 app.get("/", (req, res) => {
   res.send("Movies Searches Server is Up!!!");
@@ -57,8 +57,8 @@ app.post("/getHighestRatingMovie", async (req, res) => {
 const start = async () => {
   try {
     app
-      .listen(port, () => {
-        console.log(`Server is listening on port ${port}`);
+      .listen(PORT, () => {
+        console.log(`Server is listening on port ${PORT}`);
       })
       .on("error", (err) => {
         console.log("Server failed", {}, err);
