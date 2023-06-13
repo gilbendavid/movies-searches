@@ -40,16 +40,16 @@ app.get("/getMovieReleasedDate", async (req, res) => {
   res.status(200).send({ result });
 });
 
-app.post("/getHighestRatingMovie", async (req, res) => {
+app.post("/highestRatingMovie", async (req, res) => {
   if (!req?.body?.movies || req.body.movies.length === 0) {
     res.status(400).send({ massage: "Movies list is missing" });
     return;
   }
   const result = await getHighestRatingMovie(req.body.movies);
   console.log(
-    `getHighestRatingMovie - Movies=${
-      req.body.movies
-    } - Result=${JSON.stringify(result)}`
+    `highestRatingMovie - Movies=${req.body.movies} - Result=${JSON.stringify(
+      result
+    )}`
   );
   res.status(200).send({ result });
 });

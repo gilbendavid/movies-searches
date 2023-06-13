@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "a5c506e2-d32a-4d0b-b680-3f0380b3f2c3",
+		"name": "QA Automation - Code Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19177898"
+	},
+	"item": [
+		{
+			"name": "getMovieReleasedDate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://movies-searches.herokuapp.com/getMovieReleasedDate?identifier=The Departed",
+					"protocol": "https",
+					"host": [
+						"movies-searches",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"getMovieReleasedDate"
+					],
+					"query": [
+						{
+							"key": "identifier",
+							"value": "The Departed"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllMoviesTitles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://movies-searches.herokuapp.com/getAllMoviesTitles?searchValue=big",
+					"protocol": "https",
+					"host": [
+						"movies-searches",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"getAllMoviesTitles"
+					],
+					"query": [
+						{
+							"key": "searchValue",
+							"value": "big"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "highestRatingMovie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"movies\": [\n      \"Titanic\",\n      \"Casino\",\n      \"Looper\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://movies-searches.herokuapp.com/highestRatingMovie?test=1",
+					"protocol": "https",
+					"host": [
+						"movies-searches",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"highestRatingMovie"
+					],
+					"query": [
+						{
+							"key": "test",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
