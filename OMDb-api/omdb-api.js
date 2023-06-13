@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-const apiUrl = "http://www.omdbapi.com/?apikey={USE_YOUR_KEY}";
+const apiUrl = "http://www.omdbapi.com/?apikey=ed440c27";
 
 /*
 Search Movie in OMDb API by free text   
@@ -15,7 +15,9 @@ const searchOmdbApi = async (searchValue) => {
 Search Movie in OMDb API by Movie ID(imdbID)  
 */
 const searchOmdbApiByMovieId = async (imdbID) => {
-  //Implement Logic...
+  const searchUrl = `${apiUrl}&i=${imdbID}&plot=full`;
+  const res = await axios.get(searchUrl);
+  return res?.data;
 };
 
 /*

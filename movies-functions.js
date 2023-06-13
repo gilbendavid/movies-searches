@@ -23,7 +23,12 @@ const getAllMoviesTitles = async (searchValue) => {
  * @returns The movie name and released date
  */
 const getMovieReleasedDate = async (identifier) => {
-  //Implement Logic...
+  let movie = await getMovieReleasedDateByMovieTitle(identifier);
+  if (movie?.name) {
+    return movie;
+  }
+  movie = await getMovieReleasedDateByMovieId(identifier);
+  return movie;
 };
 
 /**
@@ -35,7 +40,16 @@ const getHighestRatingMovie = async (moviesList) => {
   if (!moviesList || moviesList.length === 0) {
     return "Movies List is missing!";
   }
-  //Complete the implementation logic...
+  const movies = [];
+  for (const movie of moviesList) {
+    const movObj = await getMovieByName(movie);
+    movies.push({ name: movObj?.Title, rating: movObj?.imdbRating });
+  }
+  const highestRating = Math.max(...movies.map((m) => m.rating));
+  const highestRatingMovie = movies.find(
+    (m) => parseFloat(m.rating) === highestRating
+  );
+  return highestRatingMovie;
 };
 
 const getMovieReleasedDateByMovieTitle = async (movieTitle) => {
