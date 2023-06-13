@@ -8,7 +8,9 @@ GitHub repo for cloning the code - https://github.com/gilbendavid/movies-searche
 - getAllMoviesTitles - Get all Movies titles as string array if there are results, Or an error message if there is no results to the search value, the input of this endpoint is free text string under the “searchValue” query parameter. (GET method)
 
 Example: 
+
 Request: https://movies-searches.herokuapp.com/getAllMoviesTitles?searchValue=toy
+
 Response: 
 {
     "result": [
@@ -30,7 +32,9 @@ Response:
 The endpoint response is a json with the movie name and release date, Or a error message if there is no results to the identifier.(GET method)
 
 Examples: 
+
 Request: https://movies-searches.herokuapp.com/getMovieReleasedDate?identifier=The Departed
+
 Response: 
 {
     "result": {
@@ -40,6 +44,7 @@ Response:
 }
 
 Request: https://movies-searches.herokuapp.com/getMovieReleasedDate?identifier=tt1309379
+
 Response: 
 {
     "result": {
@@ -51,7 +56,9 @@ Response:
 - highestRatingMovie - this endpoint received a json body with movies titles names as strings and return a json object of the  highest rating Movie(by the imdbRating movie field)(POST method)
 
 Example: 
+
 Request: https://movies-searches.herokuapp.com/highestRatingMovie
+
 Request Body: 
 {
     "movies": [
@@ -60,6 +67,7 @@ Request Body:
       "Looper"
     ]
 }
+
 Response Body:
 {
     "result": {
