@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
+    "start:script": "node index.js",
     "test": ""
   },
   "author": "Different",
