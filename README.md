@@ -1,30 +1,82 @@
 # movies-searches
 
-During this assignment, you will need to complete the implementation of Movies API and create automation tests to cover the logic of the API methods.
+During this assignment, you need to implement automation tests to sample the API app that we created on top of Movies API, and cover the logic of the below three endpoints.
 
-The external API for the assignment is - https://www.omdbapi.com/
-Start by creating your needed API key it is free and you can do that here.
-	**In case you have problems with API Key creation contact the us and we will provide you the API key.
+If you choose to write your tests in JS/TS it is recommended to use the app source code and implement the tests under the tests folder.
+GitHub repo for cloning the code - https://github.com/gilbendavid/movies-searches.git.
 
-For the assignment choose your preferred language and test Automation framework(We recommend using JS/TS), and we can provide you this GitHub Repo as boilerplate code.
+- getAllMoviesTitles - Get all Movies titles as string array if there are results, Or an error message if there is no results to the search value, the input of this endpoint is free text string under the “searchValue” query parameter. (GET method)
 
-Assignment Requirements:
-Complete the Implementation of 3 API methods and make sure they worked as expected:
- - Search Movies by free text
- - Search by Movie Title
- - Search by Movie Id
+Example: 
+Request: https://movies-searches.herokuapp.com/getAllMoviesTitles?searchValue=toy
+Response: 
+{
+    "result": [
+        "Toy Story",
+        "Toy Story 3",
+        "Toy Story 2",
+        "Toy Story 4",
+        "Toy Soldiers",
+        "Toy Story of Terror",
+        "The Toy",
+        "Toy Story That Time Forgot",
+        "Tin Toy",
+        "Toy Story Toons: Hawaiian Vacation"
+    ]
+}
 
-Complete the Implementation of the 3 logical methods:
- - getAllMoviesTitles - Get all Movies Titles as string Array (free text string as input)
- - getMovieReleasedDate - Get the Movie release date (Movie name/id as input string)
- - getHighestRatingMovie - Return the highest rating Movie(by the imdbRating movie field) (Array of movies names as input)
+	
+- getMovieReleasedDate - Get Movie release date, the input of this endpoint is the Movie identifier name/id under the “identifier” query parameter.
+The endpoint response is a json with the movie name and release date, Or a error message if there is no results to the identifier.(GET method)
 
-Implement the relevant Tests in your opinion for the logical methods with your preferred Testing freamwork:
-getAllMoviesTitles, getMovieReleasedDate, getHighestRatingMovie
+Examples: 
+Request: https://movies-searches.herokuapp.com/getMovieReleasedDate?identifier=The Departed
+Response: 
+{
+    "result": {
+        "name": "The Departed",
+        "releasedYear": "06 Oct 2006"
+    }
+}
 
+Request: https://movies-searches.herokuapp.com/getMovieReleasedDate?identifier=tt1309379
+Response: 
+{
+    "result": {
+        "name": "Sam",
+        "releasedYear": "01 Nov 2017"
+    }
+}
+
+- highestRatingMovie - this endpoint received a json body with movies titles names as strings and return a json object of the  highest rating Movie(by the imdbRating movie field)(POST method)
+
+Example: 
+Request: https://movies-searches.herokuapp.com/highestRatingMovie
+Request Body: 
+{
+    "movies": [
+      "Titanic",
+      "Casino",
+      "Looper"
+    ]
+}
+Response Body:
+{
+    "result": {
+        "name": "Casino",
+        "rating": "8.2"
+    }
+}
+
+References: 
+- The external API for the assignment application is - https://www.omdbapi.com/
+
+- Postman Collection for the assessment application endpoints (you can import and work locally via postman) 
+ 
 While building this assignment please keep in mind the following:
- - Clean code and good separation of layers.
- - Modular design, for maintenance and new logic support in the future.
- - It's okay if you don't finish it all. Write what you can and we'll talk about it afterward.
+- Clean code and good separation of layers.
+- Modular design, for maintenance and new logic support in the future.
+- It's okay if you don't finish it all. Write what you can and we'll discuss it afterward.
 
 Good Luck!!!
+
