@@ -82,4 +82,6 @@ module.exports = {
   getAllMoviesTitles,
   getMovieReleasedDate,
   getHighestRatingMovie,
+  getMovieByName,
+  getMovieById,
 };

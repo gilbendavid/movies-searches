@@ -6,12 +6,42 @@ const {
   getAllMoviesTitles,
   getMovieReleasedDate,
   getHighestRatingMovie,
+  getMovieByName,
+  getMovieById,
 } = require("./movies-functions");
 const PORT = process.env.PORT || 5555;
 
 app.get("/", (req, res) => {
   res.send("Movies Searches Server is Up!!!");
   console.log("Movies Searches Server is Up!!!");
+});
+
+app.get("/getMovieByName", async (req, res) => {
+  if (!req.query.movieName) {
+    res.status(400).send({ massage: "Movie Name is missing" });
+    return;
+  }
+  const result = await getMovieByName(req.query.movieName);
+  console.log(
+    `getMovieByName movieName=${
+      req.query.searchValue
+    } - Result=${JSON.stringify(result)}`
+  );
+  res.status(200).send({ result });
+});
+
+app.get("/getMovieById", async (req, res) => {
+  if (!req.query.movieId) {
+    res.status(400).send({ massage: "Movie Id is missing" });
+    return;
+  }
+  const result = await getMovieById(req.query.movieId);
+  console.log(
+    `getMovieById movieId=${req.query.searchValue} - Result=${JSON.stringify(
+      result
+    )}`
+  );
+  res.status(200).send({ result });
 });
 
 app.get("/getAllMoviesTitles", async (req, res) => {
